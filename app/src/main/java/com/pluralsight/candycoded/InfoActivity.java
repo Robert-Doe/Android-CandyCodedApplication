@@ -25,32 +25,32 @@ public class InfoActivity extends AppCompatActivity {
 
     }
 
-    public void createPhoneIntent(View view)
-    {
-        Intent newIntent=new Intent();
-        newIntent.setAction(Intent.ACTION_DIAL);
-        Uri phoneUri=Uri.parse("tel:0123456789");
-        newIntent.setData(phoneUri);
-        startActivity(newIntent);
-
-    }
-    public void createMapIntent(View view)
-    {
-        Uri newUri =Uri.parse("geo:0,0?q=618 E South St Orlando, FL 32801");
-        Intent mapIntent= new Intent(Intent.ACTION_VIEW,newUri);
-        mapIntent.setPackage("com.google.android.apps.maps");
-        if(mapIntent.resolveActivity(getPackageManager())!=null)
-        {
-            startActivity(mapIntent);
-        }
-
-    }
 
     // ***
     // TODO - Task 2 - Launch the Google Maps Activity
     // ***
+    public void createMapIntent(View view) {
+        Uri newUri = Uri.parse("geo:0,0?q=618 E South St Orlando, FL 32801");
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, newUri);
+        mapIntent.setPackage("com.google.android.apps.maps");
+        if (mapIntent.resolveActivity(getPackageManager()) != null) {
+            startActivity(mapIntent);
+        }
 
+    }
     // ***
     // TODO - Task 3 - Launch the Phone Activity
     // ***
+
+
+    public void createPhoneIntent(View view) {
+        Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
+        //phoneIntent.setAction(Intent.ACTION_DIAL);
+        Uri phoneUri = Uri.parse("tel:0123456789");
+        phoneIntent.setData(phoneUri);
+        //startActivity(phoneIntent);
+        startActivity(phoneIntent);
+
+    }
+
 }
