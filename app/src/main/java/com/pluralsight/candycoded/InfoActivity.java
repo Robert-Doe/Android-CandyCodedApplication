@@ -25,6 +25,14 @@ public class InfoActivity extends AppCompatActivity {
 
     }
 
+    public void createPhoneIntent(View view)
+    {
+        Intent newIntent=new Intent();
+        newIntent.setAction(Intent.ACTION_DIAL);
+        newIntent.setData(Uri.parse("tel:0123456789"));
+        startActivity(newIntent);
+
+    }
     public void createMapIntent(View view)
     {
         Uri newUri =Uri.parse("geo:0,0?q=618 E South St Orlando, FL 32801");
